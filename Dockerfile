@@ -1,11 +1,11 @@
 #
 # Grakn Dockerfile
 #
-# https://github.com/bfergerson/grakn-docker-toolbox
+# https://github.com/alexdeleon/grakn-docker
 #
-FROM openjdk:8-jdk
+FROM java:8
 
-LABEL maintainer="github.com/bfergerson"
+LABEL maintainer="github.com/alexdeleon"
 
 ARG GRAKN_VERSION=1.4.2
 
@@ -18,7 +18,7 @@ RUN mkdir -p $GRAKN_HOME && \
 ENV PATH=$PATH:$GRAKN_HOME
 WORKDIR $GRAKN_HOME
 
-COPY cassandra.yaml $GRAKN_HOME/services/cassandra
+#COPY cassandra.yaml $GRAKN_HOME/services/cassandra
 COPY grakn-docker-entrypoint /usr/local/bin
 
 # Grakn Server
