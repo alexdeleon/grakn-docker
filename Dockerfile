@@ -7,7 +7,7 @@ FROM java:8
 
 LABEL maintainer="github.com/alexdeleon"
 
-ARG GRAKN_VERSION=1.4.2
+ARG GRAKN_VERSION=1.4.3
 
 ENV GRAKN_HOME=/opt/grakn
 
