@@ -7,13 +7,14 @@ FROM java:8
 
 LABEL maintainer="github.com/alexdeleon"
 
-ARG GRAKN_VERSION=1.4.3
+ARG GRAKN_VERSION=1.5.0
 
 ENV GRAKN_HOME=/opt/grakn
 
+COPY grakn-core-all-1.5.0.zip .
+
 RUN mkdir -p $GRAKN_HOME && \
-    wget https://github.com/graknlabs/grakn/releases/download/v${GRAKN_VERSION}/grakn-core-${GRAKN_VERSION}.zip && \
-    unzip grakn-core-${GRAKN_VERSION}.zip -d $GRAKN_HOME && cp -Rf $GRAKN_HOME/grakn-core-${GRAKN_VERSION}/* $GRAKN_HOME
+    unzip grakn-core-all-1.5.0.zip -d $GRAKN_HOME && cp -Rf $GRAKN_HOME/grakn-core-all/* $GRAKN_HOME
 
 ENV PATH=$PATH:$GRAKN_HOME
 WORKDIR $GRAKN_HOME
