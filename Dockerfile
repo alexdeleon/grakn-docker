@@ -7,12 +7,12 @@ FROM java:8
 
 LABEL maintainer="github.com/alexdeleon"
 
-ENV GRAKN_VERSION=1.5.0
+ENV GRAKN_VERSION=1.5.1
 
 ENV GRAKN_HOME=/opt/grakn
 
 RUN mkdir -p $GRAKN_HOME && \
-    wget https://github.com/graknlabs/grakn/releases/download/1.5.0/grakn-core-all-linux-${GRAKN_VERSION}.tar.gz && \
+    wget https://github.com/graknlabs/grakn/releases/download/${GRAKN_VERSION}/grakn-core-all-linux-${GRAKN_VERSION}.tar.gz && \
     tar xzf grakn-core-all-linux-${GRAKN_VERSION}.tar.gz && cp -Rf grakn-core-all-linux-${GRAKN_VERSION}/* $GRAKN_HOME
 
 ENV PATH=$PATH:$GRAKN_HOME
